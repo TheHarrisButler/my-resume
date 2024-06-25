@@ -3,7 +3,7 @@
 
   font: "Arial",
   font-size: 11pt,
-  accent-color: blue,
+  accent-color: black,
   body-color: rgb("222"),
 
   header-accent-color: none, // inherit
@@ -43,7 +43,7 @@
 
   set page(
     margin: (
-      top: 2 * th("margin"),
+      top: th("margin"),
       bottom: th("margin"),
       left: th("margin"),
       right: th("margin"),
@@ -58,7 +58,7 @@
   set text(size: th("font-size"))
 
   set par(linebreaks: "simple", leading: 0.4em)
-  set block(above: 10pt, below: 8pt, spacing: 10pt)
+  set block(above: 10pt, below: 6pt, spacing: 10pt)
 
   {
     show heading.where(level: 1): set text(size: 3.0em)
@@ -67,15 +67,12 @@
     show heading.where(level: 2): set text(fill: th("header-body-color", default: "body-color").lighten(30%))
 
     stack(
+      dir: ltr,
       spacing: th("margin"),
       heading(level: 1, title),
-      heading(level: 2, subtitle),
-      v(th("margin"))
+      heading(level: 2, subtitle)
     )
   }
-
-  show heading.where(level: 1): set text(size: 1.2em, fill: th("accent-color"))
-  show heading.where(level: 2): set text(size: 1.0em, fill: th("body-color"))
 
   grid(
     columns: (th("main-width"), th("margin"), th("aside-width")),

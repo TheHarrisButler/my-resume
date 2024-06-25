@@ -1,23 +1,15 @@
 #import "./package.typ": *
 
-
-#let secondary-theme = (
-  accent-color: red,
-  body-color: red,
+#let aside-theme = (
+  gutter-size: 0.5fr
 )
 
 #show: cv.with(
-  theme: (
-    //font: "Roboto",
-    //accent-color: purple,
-    //main-accent-color: red,
-    //main-body-color: green,
-  ),
+  theme: (),
   title: "Harris Butler",
   subtitle: "Software Engineer",
   aside: {
     section(
-      theme: secondary-theme,
       "Contact",
       {
         entry(
@@ -35,12 +27,7 @@
           link("mailto:hb@harrishbutler.com", "hb@harrishbutler.com"),
           none,
         )
-        entry("GitHub", link("https://github.com/TheHarrisButler", "TheHarrisButler"), none)
-        entry(
-          "LinkedIn",
-          link("https://www.linkedin.com/in/harris-butler-371761173", "in/harris-butler-371761173"),
-          none,
-        )
+        entry("Website", link("harrishbutler.com", "harrishbutler.com"), none)
       },
     )
 
@@ -48,39 +35,60 @@
       "Technology Stack",
       {
         entry(
+          theme: aside-theme,
+          "Languages",
+          "JavaScript, TypeScript, Node.js, Python",
+          []
+        )
+        entry(
+          theme: aside-theme,
           "Web",
-          "JavaScript + TypeScript",
-          [
-            #progress-bar(70%)
-          ],
+          "React, Next.js, Vite",
+          [],
         )
         entry(
-          none, 
-          "Node.js",
-          [
-            #progress-bar(70%)
-          ],
+          theme: aside-theme,
+          "Testing",
+          "React Testing Library, Jest, Cypress",
+          [],
         )
         entry(
-          none,
-          "React",
-          [
-            #progress-bar(50%)
-          ],
-        )
-        entry(
+          theme: aside-theme,
           "DBMS",
-          "MS SQL, PostgreSQL, MongoDB",
-          [
-            #progress-bar(40%)
-          ],
+          "PostgreSQL",
+          [],
         )
         entry(
-          none,
-          "Hosting, CI/CD",
-          [Terraform, AWS,\ GitHub Actions],
+          theme: aside-theme,
+          "CI/CD",
+          "GitHub Actions",
+          [],
+        )
+        entry(
+          theme: aside-theme,
+          "Version Control",
+          "Git",
+          [],
+        )
+        entry(
+          theme: aside-theme,
+          "Hosting",
+          "Fly.io, AWS",
+          [],
         )
       },
+    )
+
+    section(
+      "Education",
+      {
+        entry(
+          theme: (),
+          "2016 - 2021",
+          "The University of Texas at Tyler",
+          [BS in Computer Science, Minor in Mathematics],
+        )
+      }
     )
 
     section(
@@ -105,7 +113,9 @@
         entry(
           "Student Athelete",
           none,
-          [5 year lettermen, 2018 Champions of the American Southwest Conference],
+          [
+            4 year lettermen on the UT Tyler Men's Golf Team, 2018 Champions of the American Southwest Conference
+          ],
         )
       },
     )
@@ -113,21 +123,25 @@
   }
 )
 
-
 #section(
   "Professional Experience",
   {
     entry(
       right: [*\@Auctane* – Austin, TX],
-      "Apr 2022 - now",
+      "Apr 2022 - Present",
       "Software Engineer L2",
       [
-        #par(lorem(24))
+        #par(lorem(12))
         #list(
-          lorem(20),
-          lorem(7),
-          lorem(16),
-          lorem(16),
+          [
+            Built and maintained a client-facing component library with React/TypeScript, a crucial step in streamlining our partner's development of their in-house shipping solution.
+          ],
+          [
+            Built and maintained a JavaScript library providing React bindings to a REST API client with added data sharing and cache management via ReactQuery.
+          ],
+          [
+            Tech lead of 2 engineers on developing an internal sales demo application built with React/TypeScript/Node.js, enhancing our sales team process and improving conversion rates by 25%.
+          ]
         )
       ],
     )
@@ -136,8 +150,13 @@
       "June 2021 - Apr 2022",
       "Software Engineer L1",
       [
-        #par(lorem(28))
-        #par(lorem(16))
+        #par(lorem(12))
+        #list(
+          [
+            Developed and maintained a white-labeled shipping solution for a high-profile partner using React, TypeScript, and GraphQL. Successfully scaled the app to a user base of over 500,000.
+          ],
+          lorem(7),
+        )
       ],
     )
     entry(
@@ -147,32 +166,61 @@
       [
         #par(lorem(12))
         #list(
-          lorem(20),
-          lorem(16),
-          lorem(7),
+          [
+            Successfully migrated an existing app from a vanilla JavaScript and React to Next.js and TypeScript.
+          ],
+          [
+            Collaborated closely with developers and designers to ensure seamless integration of Next.js and TypeScript into the existing codebase.
+          ],
+          [
+            Aligned the project with better architectural standards(clean architecture) to ensure the codebase's maintainability.
+          ],
         )
       ],
     )
     entry(
       right: [*\@Talent Reef* -- Denver, CO],
       "June 2019 - Aug 2019",
-      "Internship",
+      "SWE Intern",
       [
-        #par(lorem(12))
+        #par(
+          [
+            Rotational internship between Tier II Technical Support, Engineering, Quality Assurance, and Product Management.
+          ]
+        )
+        #list(
+          [
+            Increased productivity of the quality assurance team by developing and implementing automated API tests using Java and Serenity BDD.
+          ]
+        )
       ],
     )
   },
 )
 
 #section(
-  "Educational Background",
+  "Projects",
   {
     entry(
-      theme: secondary-theme,
-      right: [Tyler, TX],
-      "2016 - 2021",
-      "The University of Texas at Tyler",
-      [ Bachelor of Science in Computer Science, Minor in Mathematics ],
+      "2023",
+      "Shipmunk",
+      [
+         #par(lorem(12))
+      ],
     )
-  },
+    entry(
+      "2022",
+      "harrishbutler.com",
+      [
+         #par(lorem(12))
+      ],
+    )
+    entry(
+      "2021",
+      "The Map Game",
+      [
+         #par(lorem(12))
+      ],
+    )
+  }
 )
