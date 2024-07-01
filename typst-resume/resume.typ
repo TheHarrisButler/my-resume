@@ -43,7 +43,7 @@
         entry(
           theme: aside-theme,
           "Web",
-          "React, Next.js, Vite",
+          "React, Next.js, Vite, ReactQuery",
           [],
         )
         entry(
@@ -56,6 +56,12 @@
           theme: aside-theme,
           "DBMS",
           "PostgreSQL",
+          [],
+        )
+        entry(
+          theme: aside-theme,
+          "Bundling",
+          "Rollup, Webpack",
           [],
         )
         entry(
@@ -74,6 +80,12 @@
           theme: aside-theme,
           "Hosting",
           "Fly.io, AWS",
+          [],
+        )
+         entry(
+          theme: aside-theme,
+          "AI/ML",
+          "GPT-4 API, GitHub Co-pilot",
           [],
         )
       },
@@ -131,43 +143,29 @@
       "Apr 2022 - Present",
       "Software Engineer L2",
       [
-        #par(lorem(12))
+        #v(4pt)
         #list(
           [
-            Built and maintained a client-facing component library with React/TypeScript, a crucial step in streamlining our partner's development of their in-house shipping solution.
+            Developed and maintained a greenfield shipping and logistics React component library built on top of our flagship shipping API platform with added data sharing and cache management via ReactQuery.
           ],
           [
-            Built and maintained a JavaScript library providing React bindings to a REST API client with added data sharing and cache management via ReactQuery.
+            Refactored the projects build process by removing certain dependecies 
           ],
           [
-            Tech lead of 2 engineers on developing an internal sales demo application built with React/TypeScript/Node.js, enhancing our sales team process and improving conversion rates by 25%.
+            Tech lead of 2 engineers on developing an internal sales demo application built with React, TypeScript, and Next.js, enhancing our sales team process and improving conversion rates by 25%.
           ]
-        )
-      ],
-    )
-    entry(
-      right: [*\@Auctane* -- Austin, TX],
-      "June 2021 - Apr 2022",
-      "Software Engineer L1",
-      [
-        #par(lorem(12))
-        #list(
-          [
-            Developed and maintained a white-labeled shipping solution for a high-profile partner using React, TypeScript, and GraphQL. Successfully scaled the app to a user base of over 500,000.
-          ],
-          lorem(7),
         )
       ],
     )
     entry(
       right: [*\@Glowstik* -- Denver, CO],
       "Oct 2022 - June 2023",
-      "Software Engineer Contract ",
+      "SWE Contract",
       [
-        #par(lorem(12))
+        #v(4pt)
         #list(
           [
-            Successfully migrated an existing app from a vanilla JavaScript and React to Next.js and TypeScript.
+            Successfully migrated an existing vanilla CRA to Next.js and TypeScript.
           ],
           [
             Collaborated closely with developers and designers to ensure seamless integration of Next.js and TypeScript into the existing codebase.
@@ -179,16 +177,34 @@
       ],
     )
     entry(
+      right: [*\@Auctane* -- Austin, TX],
+      "June 2021 - Apr 2022",
+      "Software Engineer L1",
+      [
+        #v(4pt)
+        #list(
+          [
+            Developed and maintained dozens of core features in Typescript, React, and GraphQL across the platform. Deployed to 400,000+ users. 
+          ],
+          [
+            Reduced the Cypress.js end-to-end test suite run times by parallelizing test runs in GitHub Actions—reduced test suite run time by 80%. 
+          ],
+          [
+            Improved test coverage and robustness by mocking the projects most used API endpoints. 
+          ]
+        )
+      ],
+    )
+    entry(
       right: [*\@Talent Reef* -- Denver, CO],
       "June 2019 - Aug 2019",
       "SWE Intern",
       [
-        #par(
+        #v(4pt)
+        #list(
           [
             Rotational internship between Tier II Technical Support, Engineering, Quality Assurance, and Product Management.
-          ]
-        )
-        #list(
+          ],
           [
             Increased productivity of the quality assurance team by developing and implementing automated API tests using Java and Serenity BDD.
           ]
@@ -217,7 +233,7 @@
     )
     entry(
       "2021",
-      "The Map Game",
+      "The map game",
       [
          #par(lorem(12))
       ],

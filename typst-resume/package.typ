@@ -58,7 +58,7 @@
   set text(size: th("font-size"))
 
   set par(linebreaks: "simple", leading: 0.4em)
-  set block(above: 10pt, below: 6pt, spacing: 10pt)
+  set block(above: 8pt, spacing: 10pt)
 
   {
     show heading.where(level: 1): set text(size: 3.0em)
@@ -67,7 +67,6 @@
     show heading.where(level: 2): set text(fill: th("header-body-color", default: "body-color").lighten(30%))
 
     stack(
-      dir: ltr,
       spacing: th("margin"),
       heading(level: 1, title),
       heading(level: 2, subtitle)
@@ -165,39 +164,9 @@
         )
       }
       if body != none {
-        set par(justify: true)
-        set block(above: 6pt)
+        set block(below: 4pt)
         body
       }
     }
   )
-}
-
-
-#let progress-bar(
-  progress,
-) = {
-  // Fix for https://github.com/typst/typst/issues/3826
-  if progress == 0% {
-    progress = 0.1%
-  }
-
-  set block(above: 0pt, below: 0pt, spacing: 0pt)
-  set par(leading: 0em)
-
-  context {
-    let light-accent = rect.fill.lighten(30%)
-
-    rect(
-      height: 6pt,
-      width: 100%,
-      stroke: light-accent,
-      fill: gradient.linear(
-        (light-accent, 0%),
-        (light-accent, progress),
-        (white, progress),
-        (white, 100%),
-      ),
-    )
-  }
 }
