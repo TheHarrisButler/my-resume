@@ -6,16 +6,9 @@
   accent-color: black,
   body-color: rgb("222"),
 
-  header-accent-color: none, // inherit
-  header-body-color: none, // inherit
-
-  main-accent-color: none, // inherit
-  main-body-color: none, // inherit
   main-width: 5fr,
   main-gutter-width: 64pt,
 
-  aside-accent-color: none, // inherit
-  aside-body-color: none, // inherit
   aside-width: 3fr,
   aside-gutter-width: 48pt,
 )
@@ -76,7 +69,6 @@
   grid(
     columns: (th("main-width"), th("margin"), th("aside-width")),
 
-    // Content.
     {
       set grid(columns: (th("main-gutter-width"), 1fr))
       show heading.where(level: 1): set text(fill: th("main-accent-color", default: "accent-color").lighten(30%))
@@ -87,10 +79,8 @@
       main
     },
 
-    // Empty space.
     {},
 
-    // Aside.
     {
       set grid(columns: (th("aside-gutter-width"), 1fr))
       show heading.where(level: 1): set text(fill: th("aside-accent-color", default: "accent-color").lighten(30%))

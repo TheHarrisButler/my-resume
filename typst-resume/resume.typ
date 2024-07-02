@@ -19,7 +19,7 @@
         )
         entry(
           "Phone",
-          link("https://wa.me/85212345678", "+1 303-319-0118"),
+          "+1 303-319-0118",
           none,
         )
         entry(
@@ -206,7 +206,7 @@
             Rotational internship between Tier II Technical Support, Engineering, Quality Assurance, and Product Management.
           ],
           [
-            Increased productivity of the quality assurance team by developing and implementing automated API tests using Java and Serenity BDD.
+            Increased productivity of the QA team by developing and implementing automated API tests using Java and Serenity BDD.
           ]
         )
       ],
@@ -221,21 +221,32 @@
       "2023",
       "Shipmunk",
       [
-         #par(lorem(12))
+        #v(4pt)
+        #list([
+          Developed a Google Chrome extension with React and Typescript, allowing users to quickly and easily purchase shipping labels from anywhere online. Won the 2023 Auctane Engineering hackathon 
+        ])
+         
       ],
     )
     entry(
       "2022",
       "harrishbutler.com",
       [
-         #par(lorem(12))
+        #v(4pt)
+        #list([
+          Rebuilt my website using React, Next.js, and TypeScript. The app is hosted with Fly.io and deployed via GitHub actions.
+        ])
+         
       ],
     )
     entry(
       "2021",
-      "The map game",
+      "The Map Game",
       [
-         #par(lorem(12))
+        #v(4pt)
+        #list([
+          A turn-based PvP guessing game where opponents send each other a location rendered as a Google Maps street view. The first one to guess five correct locations wins. Inspired by the popular GeoGuessr game and an exercise to learn more about building web sockets.
+        ])
       ],
     )
   }
