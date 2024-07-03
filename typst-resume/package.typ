@@ -11,6 +11,9 @@
 
   aside-width: 3fr,
   aside-gutter-width: 48pt,
+
+  footer-width: 8fr,
+  footer-gutter-width: 48pt,
 )
 
 
@@ -19,7 +22,8 @@
   subtitle: "",
   theme: (),
   aside: [],
-  main,
+  main: [],
+  footer,
 ) = {
   // Function to pick a key from the theme, or a default if not provided.
   let th(key, default: none) = {
@@ -51,7 +55,7 @@
   set text(size: th("font-size"))
 
   set par(linebreaks: "simple", leading: 0.4em)
-  set block(above: 8pt, spacing: 10pt)
+  set block(above: 7pt, spacing: 10pt)
 
   {
     show heading.where(level: 1): set text(size: 3.0em)
@@ -60,7 +64,7 @@
     show heading.where(level: 2): set text(fill: th("header-body-color", default: "body-color").lighten(30%))
 
     stack(
-      spacing: th("margin"),
+      spacing: 12pt,
       heading(level: 1, title),
       heading(level: 2, subtitle)
     )
@@ -90,6 +94,20 @@
 
       aside
     },
+  )
+
+  grid(
+    columns: (th("footer-width")),
+
+    {
+      set grid(columns: (th("footer-gutter-width"), 1fr))
+      show heading.where(level: 1): set text(fill: th("main-accent-color", default: "accent-color").lighten(30%))
+      show heading.where(level: 2): set text(fill: th("main-body-color", default: "body-color"))
+      set text(fill: th("main-body-color", default: "body-color").lighten(40%))
+      set rect(fill: th("main-accent-color", default: "accent-color"))
+
+      footer
+    }
   )
 }
 

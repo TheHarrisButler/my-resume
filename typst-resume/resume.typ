@@ -37,7 +37,7 @@
         entry(
           theme: aside-theme,
           "Languages",
-          "JavaScript, TypeScript, Node.js, Python",
+          "JavaScript, TypeScript, Python, Bash",
           []
         )
         entry(
@@ -50,6 +50,12 @@
           theme: aside-theme,
           "Testing",
           "React Testing Library, Jest, Cypress",
+          [],
+        )
+        entry(
+          theme: aside-theme,
+          "API",
+          "REST",
           [],
         )
         entry(
@@ -103,22 +109,6 @@
       }
     )
 
-    section(
-      "Extracurricular Activities",
-      {
-        entry(
-          "Culture",
-          none,
-          [Cooking, History, Reading],
-        )
-        entry(
-          "Sport",
-          none,
-          [Golf, Running],
-        )
-      },
-    )
-
      section(
       "Awards and Achievements",
       {
@@ -126,91 +116,95 @@
           "Student Athelete",
           none,
           [
-            4 year lettermen on the UT Tyler Men's Golf Team, 2018 Champions of the American Southwest Conference
+            4 year lettermen on the UT Tyler Men's Golf Team
           ],
         )
       },
     )
 
-  }
-)
+  },
+  main: {
+     section(
+      "Professional Experience",
+      {
+        entry(
+          right: [*\@Auctane* – Austin, TX],
+          "Apr 2022 - Present",
+          "Software Engineer L2",
+          [
+            #v(4pt)
+            #list(
+              [
+                Spearheaded the development and maintenance of a greenfield shipping and logistics React component library, leveraging our flagship shipping API with enhanced data sharing and cache management via ReactQuery.
+              ],
+              [
+                Acted as the technical liaison between the internal sales team and client engineering teams, leading demo meetings to showcase the technical implementation of our products into various platforms.
+              ],
+              [
+                Led a team of 2 engineers to develop an internal sales demo application using React, TypeScript, and Next.js, which improved the sales team's process and boosted conversion rates by 25%.
+              ]
+            )
+          ],
+        )
 
-#section(
-  "Professional Experience",
-  {
-    entry(
-      right: [*\@Auctane* – Austin, TX],
-      "Apr 2022 - Present",
-      "Software Engineer L2",
-      [
-        #v(4pt)
-        #list(
+        entry(
+          right: [*\@Glowstik* -- Denver, CO],
+          "Oct 2022 - June 2023",
+          "SWE Contract",
           [
-            Developed and maintained a greenfield shipping and logistics React component library built on top of our flagship shipping API platform with added data sharing and cache management via ReactQuery.
-          ],
-          [
-            Refactored the projects build process by removing certain dependecies 
-          ],
-          [
-            Tech lead of 2 engineers on developing an internal sales demo application built with React, TypeScript, and Next.js, enhancing our sales team process and improving conversion rates by 25%.
-          ]
-        )
-      ],
-    )
-    entry(
-      right: [*\@Glowstik* -- Denver, CO],
-      "Oct 2022 - June 2023",
-      "SWE Contract",
-      [
-        #v(4pt)
-        #list(
-          [
-            Successfully migrated an existing vanilla CRA to Next.js and TypeScript.
-          ],
-          [
-            Collaborated closely with developers and designers to ensure seamless integration of Next.js and TypeScript into the existing codebase.
-          ],
-          [
-            Aligned the project with better architectural standards(clean architecture) to ensure the codebase's maintainability.
+            #v(4pt)
+            #list(
+              [
+                Successfully migrated a vanilla Create React App (CRA) to Next.js and TypeScript, enhancing performance and scalability.
+              ],
+              [
+                Collaborated closely with developers and designers to ensure a seamless integration of Next.js and TypeScript into the existing codebase.
+              ],
+              [
+                Improved the codebase's maintainability by aligning the project with clean architecture principles.
+              ],
+            )
           ],
         )
-      ],
-    )
-    entry(
-      right: [*\@Auctane* -- Austin, TX],
-      "June 2021 - Apr 2022",
-      "Software Engineer L1",
-      [
-        #v(4pt)
-        #list(
+
+        entry(
+          right: [*\@Auctane* -- Austin, TX],
+          "June 2021 - Apr 2022",
+          "Software Engineer L1",
           [
-            Developed and maintained dozens of core features in Typescript, React, and GraphQL across the platform. Deployed to 400,000+ users. 
+            #v(4pt)
+            #list(
+              [
+                Delivered and maintained numerous core features in TypeScript, React, and GraphQL, deployed to over 400,000 users.
+              ],
+              [
+                Improved QA efficiency by reducing Cypress.js end-to-end test suite run times by 80% through parallelization in GitHub Actions. 
+              ],
+              [
+                Boosted test coverage and robustness by mocking the most frequently used API endpoints, ensuring higher reliability and performance. 
+              ]
+            )
           ],
-          [
-            Reduced the Cypress.js end-to-end test suite run times by parallelizing test runs in GitHub Actions—reduced test suite run time by 80%. 
-          ],
-          [
-            Improved test coverage and robustness by mocking the projects most used API endpoints. 
-          ]
         )
-      ],
-    )
-    entry(
-      right: [*\@Talent Reef* -- Denver, CO],
-      "June 2019 - Aug 2019",
-      "SWE Intern",
-      [
-        #v(4pt)
-        #list(
+
+        entry(
+          right: [*\@Talent Reef* -- Denver, CO],
+          "June 2019 - Aug 2019",
+          "SWE Intern",
           [
-            Rotational internship between Tier II Technical Support, Engineering, Quality Assurance, and Product Management.
+            #v(4pt)
+            #list(
+              [
+                Rotational internship between Tier II Technical Support, Engineering, Quality Assurance, and Product Management.
+              ],
+              [
+                Increased productivity of the QA team by developing and implementing automated API tests using Java and Serenity BDD.
+              ]
+            )
           ],
-          [
-            Increased productivity of the QA team by developing and implementing automated API tests using Java and Serenity BDD.
-          ]
         )
-      ],
-    )
+     },
+   )
   },
 )
 
@@ -221,10 +215,14 @@
       "2023",
       "Shipmunk",
       [
-        #v(4pt)
-        #list([
-          Developed a Google Chrome extension with React and Typescript, allowing users to quickly and easily purchase shipping labels from anywhere online. Won the 2023 Auctane Engineering hackathon 
-        ])
+        #list(
+          [
+            Developed a Google Chrome extension using React and TypeScript, enabling users to purchase shipping labels seamlessly from any website.
+          ],
+          [
+            Won the 2023 Auctane Engineering Hackathon.
+          ]
+        )
          
       ],
     )
@@ -232,9 +230,8 @@
       "2022",
       "harrishbutler.com",
       [
-        #v(4pt)
         #list([
-          Rebuilt my website using React, Next.js, and TypeScript. The app is hosted with Fly.io and deployed via GitHub actions.
+          Built using React, Next.js, and TypeScript. Hosted on Fly.io with automated deployment via GitHub Actions.
         ])
          
       ],
@@ -243,10 +240,14 @@
       "2021",
       "The Map Game",
       [
-        #v(4pt)
-        #list([
-          A turn-based PvP guessing game where opponents send each other a location rendered as a Google Maps street view. The first one to guess five correct locations wins. Inspired by the popular GeoGuessr game and an exercise to learn more about building web sockets.
-        ])
+        #list(
+          [
+            Developed a turn-based PvP guessing game using vanilla JavaScript, HTML, and CSS, 
+            inspired by the popular GeoGuessr game.
+          ],
+          [
+            Implemented real-time gameplay with web sockets, where players send each other Google Maps street views and compete to guess locations. The first to guess five correct locations wins.
+          ])
       ],
     )
   }
