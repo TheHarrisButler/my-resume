@@ -1,0 +1,35 @@
+name: Check PR Title
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  workflow_call:
+    inputs:
+      projects:
+        description: The projects to run the check on
+        required: false
+        type: string
+
+jobs:
+  check:
+    name: Check PR Title
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}}
+    steps:
+      - id: lint-title
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            fix
+            feat
+          scopes: |
+            !
+          requireScope: false
+      - id: get-version
+
+      - id: upload-version
