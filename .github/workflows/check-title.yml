@@ -30,6 +30,3 @@ jobs:
           scopes: |
             !
           requireScope: false
-      - id: get-version
-
-      - id: upload-version
