@@ -26,7 +26,10 @@ jobs:
           version: "v0.11.0"
       - id: compile
         name: Compile Typst
-        run: typst compile resume/resume.typ dist/resume.pdf
+        run: |
+          mkdir -p "./dist"
+
+          typst compile resume/resume.typ dist/resume.pdf
       - id: get-current-version
         name: Get Current Version
         run: |
