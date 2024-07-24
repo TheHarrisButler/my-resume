@@ -43,31 +43,35 @@ jobs:
           # get most recent commit message on main
           commit_message=${{ env.msg }}
 
-          # Spilt up version into an array
-          IFS='.' read -r -a version <<< "$current_version"
+          # Split up version into an array using parameter expansion with regex
+          if [[ $current_version =~ ([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
+            major="${BASH_REMATCH[1]}"
+            minor="${BASH_REMATCH[2]}"
+            patch="${BASH_REMATCH[3]}"
+          fi
 
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
             if [[ $commit_message =~ "!" ]]; then
-              ((version[0]++))
+              ((major++))
               # reset minor and patch to zero
-              version[1]=0
-              version[2]=0
+              minor=0
+              patch=0
             else
               # increment minor version
-              ((version[1]++))
+              ((minor++))
               # reset patch version
-              version[2]=0
+              patch=0
             fi
           fi
 
           # increment patch
           if [[ $commit_message =~ "fix" ]]; then
-            ((version[2]++))
+            ((patch++))
           fi
 
           # update version in config
-          new_version="${version[0]}.${version[1]}.${version[2]}"
+          new_version="${major}.${minor}.${patch}"
 
           tmp=$(mktemp)
 
@@ -84,12 +88,13 @@ jobs:
         run: |
           version=${{ steps.upgrade-version.outputs.version }}
 
-          # Spilt up version into an array
-          IFS='.' read -r -a version_array <<< "$version"
-
-          full_version="${version}"
-          version_major="${version_array[0]}"
-          version_minor="${version_array[1]}"
+          # Split up version into an array using parameter expansion with regex
+          if [[ $current_version =~ ([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
+            full_version="${BASH_REMATCH[0]}"
+            major="${BASH_REMATCH[1]}"
+            minor="${BASH_REMATCH[2]}"
+            patch="${BASH_REMATCH[3]}"
+          fi
 
           base="harris-resume"
           extension="pdf"
@@ -100,8 +105,8 @@ jobs:
           mkdir -p "${target_dir}"
 
           full_version_filename="${base}v${full_version}.${extension}"
-          minor_version_filename="${base}v${version_major}.${version_minor}.${extension}"
-          major_version_filename="${base}v${version_major}.${extension}"
+          minor_version_filename="${base}v${major}.${minor}.${extension}"
+          major_version_filename="${base}v${major}.${extension}"
           latest_version_filename="${base}.${extension}"
 
           new_full_version_file="${build_directory}/${full_version_filename}"
