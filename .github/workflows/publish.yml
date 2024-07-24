@@ -44,7 +44,7 @@ jobs:
           commit_message=${{ env.msg }}
 
           # Spilt up version into an array
-          version=( ${current_version//./ } )
+          IFS='.' read -r -a version <<< "$current_version"
 
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
@@ -85,7 +85,7 @@ jobs:
           version=${{ steps.upgrade-version.outputs.version }}
 
           # Spilt up version into an array
-          version_array=( ${version//./ } )
+          IFS='.' read -r -a version_array <<< "$version"
 
           full_version="${version}"
           version_major="${version_array[0]}"
