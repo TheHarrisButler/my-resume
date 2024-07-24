@@ -8,6 +8,7 @@ on:
 permissions:
   id-token: write
   contents: read
+  pages: write
 
 jobs:
   build:
@@ -37,43 +38,29 @@ jobs:
       - id: upgrade-version
         name: Upgrade version
         run: |
-          set -e
-          set -x
-
           # get current version from previous step
           current_version=${{ steps.get-current-version.outputs.version }}
-          echo "Current version: $current_version"
 
           # get most recent commit message on main
           commit_message="${{ env.msg }}"
-          echo "Commit message: $commit_message"
 
-          # Split up version into an array using parameter expansion with regex
           # Split up version into an array using parameter expansion with regex
           if [[ $current_version =~ ([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
             declare -i major="${BASH_REMATCH[1]}"
             declare -i minor="${BASH_REMATCH[2]}"
             declare -i patch="${BASH_REMATCH[3]}"
-          else
-            echo "Failed to parse current version"
-            exit 1
           fi
-
-          echo "Parsed version: major=$major, minor=$minor, patch=$patch"
 
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
             if [[ $commit_message =~ "!" ]]; then
-              if ! major=$((major + 1)); then
-                echo "Failed to increment major version"
-                exit 1
-              fi
+              ((major++))
               # reset minor and patch to zero
               minor=0
               patch=0
             else
               # increment minor version
-              minor=$((minor + 1))
+              ((minor++))
               # reset patch version
               patch=0
             fi
@@ -81,23 +68,15 @@ jobs:
 
           # increment patch
           if [[ $commit_message =~ "fix" ]]; then
-            patch=$((patch + 1))
+            ((patch++))
           fi
 
           # update version in config
           new_version="${major}.${minor}.${patch}"
-          echo "New version: $new_version"
 
           tmp=$(mktemp)
-          if ! jq --arg a "$new_version" '.version = $a' config.json > "$tmp"; then
-            echo "Failed to update config.json"
-            exit 1
-          fi
 
-          if ! mv "$tmp" config.json; then
-            echo "Failed to move temp file to config.json"
-            exit 1
-          fi
+          jq --arg a "$new_version" '.version = $a' config.json > "$tmp" && mv "$tmp" config.json
 
           echo "version=$new_version" >> $GITHUB_OUTPUT
       - id: commit-changes
