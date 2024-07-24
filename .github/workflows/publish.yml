@@ -67,7 +67,7 @@ jobs:
           fi
 
           # update version in config
-          new_version=$(echo "${version[0]}.${version[1]}.${version[2]}")
+          new_version="${version[0]}.${version[1]}.${version[2]}"
 
           tmp=$(mktemp)
 
