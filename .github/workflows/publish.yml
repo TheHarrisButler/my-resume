@@ -41,7 +41,7 @@ jobs:
           current_version=${{ steps.get-current-version.outputs.version }}
 
           # get most recent commit message on main
-          commit_message=${{ env.msg }}
+          commit_message="${{ env.msg }}"
 
           # Split up version into an array using parameter expansion with regex
           if [[ $current_version =~ ([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
