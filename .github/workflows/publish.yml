@@ -64,7 +64,10 @@ jobs:
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
             if [[ $commit_message =~ "!" ]]; then
-              ((major++))
+              if ! ((major++)); then
+                echo "Failed to increment major version"
+                exit 1
+              fi
               # reset minor and patch to zero
               minor=0
               patch=0
