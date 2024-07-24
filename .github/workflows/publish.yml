@@ -37,18 +37,29 @@ jobs:
       - id: upgrade-version
         name: Upgrade version
         run: |
+          set -e
+          set -x
+
           # get current version from previous step
           current_version=${{ steps.get-current-version.outputs.version }}
+          echo "Current version: $current_version"
 
           # get most recent commit message on main
           commit_message="${{ env.msg }}"
+          echo "Commit message: $commit_message"
 
+          # Split up version into an array using parameter expansion with regex
           # Split up version into an array using parameter expansion with regex
           if [[ $current_version =~ ([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
             major="${BASH_REMATCH[1]}"
             minor="${BASH_REMATCH[2]}"
             patch="${BASH_REMATCH[3]}"
+          else
+            echo "Failed to parse current version"
+            exit 1
           fi
+
+          echo "Parsed version: major=$major, minor=$minor, patch=$patch"
 
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
@@ -72,10 +83,18 @@ jobs:
 
           # update version in config
           new_version="${major}.${minor}.${patch}"
+          echo "New version: $new_version"
 
           tmp=$(mktemp)
+          if ! jq --arg a "$new_version" '.version = $a' config.json > "$tmp"; then
+            echo "Failed to update config.json"
+            exit 1
+          fi
 
-          jq --arg a "$new_version" '.version = $a' config.json > "$tmp" && mv "$tmp" config.json
+          if ! mv "$tmp" config.json; then
+            echo "Failed to move temp file to config.json"
+            exit 1
+          fi
 
           echo "version=$new_version" >> $GITHUB_OUTPUT
       - id: commit-changes
