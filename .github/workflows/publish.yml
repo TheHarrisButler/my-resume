@@ -64,7 +64,7 @@ jobs:
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
             if [[ $commit_message =~ "!" ]]; then
-              if ! ((major++)); then
+              if ! major=$((major + 1)); then
                 echo "Failed to increment major version"
                 exit 1
               fi
@@ -73,7 +73,7 @@ jobs:
               patch=0
             else
               # increment minor version
-              ((minor++))
+              minor=$((minor + 1))
               # reset patch version
               patch=0
             fi
@@ -81,7 +81,7 @@ jobs:
 
           # increment patch
           if [[ $commit_message =~ "fix" ]]; then
-            ((patch++))
+            patch=$((patch + 1))
           fi
 
           # update version in config
