@@ -54,13 +54,13 @@ jobs:
           if [[ $commit_message =~ "feat" ]]; then
             # increment major version
             if [[ $commit_message =~ "!" ]]; then
-              ((major++))
+              major=$((major + 1))
               # reset minor and patch to zero
               minor=0
               patch=0
             else
               # increment minor version
-              ((minor++))
+              minor=$((minor + 1))
               # reset patch version
               patch=0
             fi
@@ -68,7 +68,7 @@ jobs:
 
           # increment patch
           if [[ $commit_message =~ "fix" ]]; then
-            ((patch++))
+            patch=$((patch + 1))
           fi
 
           # update version in config
