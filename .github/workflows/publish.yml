@@ -16,9 +16,19 @@ jobs:
     env:
       msg: ${{ github.event.head_commit.message }}
     steps:
+      - id: create-github-token
+        name: Create GitHub Token
+        uses: peter-murray/workflow-application-token-action@v3
+        with:
+          application_id: ${{ vars.GH_APP_ID }}
+          application_private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          organization: ${{ github.repository_owner }}
       - id: setup-repo
         name: Set up repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.create-github-token.outputs.token }}
       - id: setup-typst
         name: Set up Typst
         uses: yusancky/setup-typst@v2
