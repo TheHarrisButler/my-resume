@@ -87,11 +87,16 @@ jobs:
           jq --arg a "$new_version" '.version = $a' config.json > "$tmp" && mv "$tmp" config.json
 
           echo "version=$new_version" >> $GITHUB_OUTPUT
-      - id: commit-changes
-        name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: released resume version ${{ steps.upgrade-version.outputs.version }} [skip ci]
+      - id: commit-version-changes
+        name: Commit and push version changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config.json
+          git commit -m "released resume version ${{ steps.upgrade-version.outputs.version }} [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - id: apply-version-to-file
         name: Apply version
         run: |
