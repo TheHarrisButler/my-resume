@@ -22,7 +22,6 @@ jobs:
         with:
           application_id: ${{ vars.GH_APP_ID }}
           application_private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-          organization: ${{ github.repository_owner }}
       - id: setup-repo
         name: Set up repository
         uses: actions/checkout@v4
