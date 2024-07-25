@@ -112,7 +112,6 @@ jobs:
           target_file=(./dist/resume.pdf)
 
           mkdir -p "${target_dir}"
-          chmod 755 "${target_dir}"
 
           full_version_filename="${base}v${full_version}.${extension}"
           minor_version_filename="${base}v${major}.${minor}.${extension}"
