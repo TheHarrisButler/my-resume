@@ -1,7 +1,7 @@
 #let default-theme = (
   margin: 22pt,
 
-  font: "Arial",
+  font: "Roboto",
   font-size: 11pt,
   accent-color: black,
   body-color: rgb("222"),
