@@ -23,14 +23,14 @@ minor_version_filename="${base}v${major}.${minor}.${extension}"
 major_version_filename="${base}v${major}.${extension}"
 latest_version_filename="${base}.${extension}"
 
-new_full_version_file="${build_directory}/${full_version_filename}"
+new_full_version_file="${target_dir}/${full_version_filename}"
 cp "$target_file" "$new_full_version_file"
 
-new_minor_version_file="${build_directory}/${minor_version_filename}"
+new_minor_version_file="${target_dir}/${minor_version_filename}"
 cp "$target_file" "$new_minor_version_file"
 
-new_major_version_file="${build_directory}/${major_version_filename}"
+new_major_version_file="${target_dir}/${major_version_filename}"
 cp "$target_file" "$new_major_version_file"
 
-new_latest_version_file="${build_directory}/${latest_version_filename}"
+new_latest_version_file="${target_dir}/${latest_version_filename}"
 cp "$target_file" "$new_latest_version_file"
