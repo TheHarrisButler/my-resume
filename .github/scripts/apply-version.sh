@@ -19,18 +19,10 @@ target_file=(./dist/resume.pdf)
 mkdir -p "${target_dir}"
 
 full_version_filename="${base}v${full_version}.${extension}"
-minor_version_filename="${base}v${major}.${minor}.${extension}"
-major_version_filename="${base}v${major}.${extension}"
 latest_version_filename="${base}.${extension}"
 
 new_full_version_file="${target_dir}/${full_version_filename}"
 cp "$target_file" "$new_full_version_file"
-
-new_minor_version_file="${target_dir}/${minor_version_filename}"
-cp "$target_file" "$new_minor_version_file"
-
-new_major_version_file="${target_dir}/${major_version_filename}"
-cp "$target_file" "$new_major_version_file"
 
 new_latest_version_file="${target_dir}/${latest_version_filename}"
 cp "$target_file" "$new_latest_version_file"
