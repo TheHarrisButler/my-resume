@@ -28,6 +28,12 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ steps.create-github-token.outputs.token }}
+      - id: setup-fonts
+        name: Setup Fonts
+        uses: fontist/setup-fontist@v2
+      - id: install-fonts
+        name: Install Fonts
+        run: fontist install "Roboto"
       - id: setup-typst
         name: Set up Typst
         uses: yusancky/setup-typst@v2
@@ -38,7 +44,7 @@ jobs:
         run: |
           mkdir -p "./dist"
 
-          typst compile resume/resume.typ dist/resume.pdf
+          typst compile resume/resume.typ dist/resume.pdf --font-path /home/runner/.fontist/fonts
       - id: get-current-version
         name: Get Current Version
         run: |
