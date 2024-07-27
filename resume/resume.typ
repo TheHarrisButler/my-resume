@@ -135,19 +135,39 @@
             #v(4pt)
             #list(
               [
-                Spearheaded the development and maintenance of a greenfield shipping and logistics React component library, leveraging our flagship shipping API with enhanced data sharing and cache management via ReactQuery.
+                Spearheaded the development of a greenfield shipping and logistics React component library fully integrated with our flagship shipping API, reducing our partner's time to market from quarters to weeks. 
               ],
               [
-                Acted as the technical liaison between the internal sales team and client engineering teams, leading demo meetings to showcase the technical implementation of our products into various platforms.
+                Acted as the technical liaison between internal sales and partner engineering teams; Led demo meetings to showcase product implementation, which resulted in an 80% conversion rate.
               ],
               [
-                Led a team of 2 engineers to develop an internal sales demo application using React, TypeScript, and Next.js, which improved the sales team's process and boosted conversion rates by 25%.
+                Led a team of 2 engineers to develop an internal product demo application using React, TypeScript, and Next.js, improving our sales team's process and boosting conversion rates, resulting in over \u{0024}500,000 in new deal value.
               ]
             )
           ],
         )
 
         entry(
+          right: [*\@Auctane* -- Austin, TX],
+          "June 2021 - Apr 2022",
+          "Software Engineer L1",
+          [
+            #v(4pt)
+            #list(
+              [
+                Developed and maintained core features in our flagship white-labeled shipping solution, using TypeScript, React, and GraphQL. Deployed to over 400,000 users; It became one of the company's most-used products, generating over \u{0024}8 million YoY.
+              ],
+              [
+                Improved CI/CD efficiency by reducing Cypress.js end-to-end test suite run times by 85% through parallelizing test scripts in GitHub Actions.
+              ],
+              [
+                Boosted our backend's test coverage and robustness by mocking the most frequently used REST API endpoints, ensuring higher reliability and performance.
+              ]
+            )
+          ],
+        )
+
+         entry(
           right: [*\@Glowstik* -- Denver, CO],
           "Oct 2022 - June 2023",
           "SWE Contract",
@@ -163,26 +183,6 @@
               [
                 Improved the codebase's maintainability by aligning the project with clean architecture principles.
               ],
-            )
-          ],
-        )
-
-        entry(
-          right: [*\@Auctane* -- Austin, TX],
-          "June 2021 - Apr 2022",
-          "Software Engineer L1",
-          [
-            #v(4pt)
-            #list(
-              [
-                Delivered and maintained numerous core features in TypeScript, React, and GraphQL, deployed to over 400,000 users.
-              ],
-              [
-                Improved QA efficiency by reducing Cypress.js end-to-end test suite run times by 80% through parallelization in GitHub Actions. 
-              ],
-              [
-                Boosted test coverage and robustness by mocking the most frequently used API endpoints, ensuring higher reliability and performance. 
-              ]
             )
           ],
         )
