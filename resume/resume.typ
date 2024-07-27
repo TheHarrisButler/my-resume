@@ -158,7 +158,7 @@
                 Developed and maintained core features in our flagship white-labeled shipping solution, using TypeScript, React, and GraphQL. Deployed to over 400,000 users; It became one of the company's most-used products, generating over \u{0024}8 million YoY.
               ],
               [
-                Improved QA efficiency by reducing Cypress.js end-to-end test suite run times by 85% through parallelization in GitHub Actions. 
+                Improved CI/CD efficiency by reducing Cypress.js end-to-end test suite run times by 85% through parallelizing test scripts in GitHub Actions.
               ],
               [
                 Boosted our backend's test coverage and robustness by mocking the most frequently used REST API endpoints, ensuring higher reliability and performance.
