@@ -58,13 +58,13 @@
   set block(above: 7pt, spacing: 10pt)
 
   {
-    show heading.where(level: 1): set text(size: 3.0em)
-    show heading.where(level: 2): set text(size: 1.6em, weight: "regular")
+    show heading.where(level: 1): set text(size: 2.3em)
+    show heading.where(level: 2): set text(size: 1.1em, weight: "regular")
     show heading.where(level: 1): set text(fill: th("header-accent-color", default: "accent-color"))
     show heading.where(level: 2): set text(fill: th("header-body-color", default: "body-color").lighten(30%))
 
     stack(
-      spacing: 12pt,
+      spacing: 5pt,
       heading(level: 1, title),
       heading(level: 2, subtitle)
     )
