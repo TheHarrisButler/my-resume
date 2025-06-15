@@ -216,6 +216,15 @@
   "Projects",
   {
     entry(
+      "2025",
+      "Badger",
+      [
+        #list([
+          Simplify splitting bills with friends. Using OpenAI's vision API, upload receipts, select items, and calculate who owes what. No more awkward "settle up later" moments. Built on a Node.js and PostgreSQL backend with an easy-to-use React Native mobile app.
+        ])
+      ],
+    )
+    entry(
       "2024",
       "Fielding-AI",
       [
