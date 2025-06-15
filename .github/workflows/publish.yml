@@ -106,7 +106,7 @@ jobs:
           UPGRADED_VERSION: ${{ steps.upgrade-version.outputs.version }}
       - id: upload-build-dir
         name: Upload Build dir
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: harris-resume
           path: ./dist/resume
