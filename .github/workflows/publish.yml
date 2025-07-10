@@ -36,9 +36,9 @@ jobs:
         run: fontist install "Roboto"
       - id: setup-typst
         name: Set up Typst
-        uses: yusancky/setup-typst@v2
+        uses: typst-community/setup-typst@v4
         with:
-          version: "v0.11.0"
+          typst-version: "v0.11.0"
       - id: compile
         name: Compile Typst
         run: |
