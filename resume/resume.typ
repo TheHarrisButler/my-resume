@@ -91,7 +91,7 @@
          entry(
           theme: aside-theme,
           "AI/ML",
-          "GPT-4 API, GitHub Co-pilot",
+          "Claude Code, AI Augmented Development",
           [],
         )
       },
@@ -132,27 +132,30 @@
       "Professional Experience",
       {
         entry(
-          right: [*\@Auctane* – Austin, TX],
+          right: [*\@ShipStation* – Austin, TX],
           "Oct 2024 - Present",
           "Software Engineer L3",
           [
             #v(4pt)
             #list(
               [
-                Drove the vision and engineering for large-scale product initiatives to enhance architecture and user experience of our core products.
+                Architected and led the 3-month comprehensive rewrite of the Stamps.com flagship web app, modernizing a legacy codebase for over 50,000 monthly active users.
               ],
               [
-                Established myself as a technical leader and mentor, providing guidance and support to other engineers on the team.
+                Leveraged AI-augmentation to accelerate development velocity, achieving a production-ready state for a decade-old system in 3 months.
               ],
               [
-                Collaborated cross-functionally to improve developer experience for new customers.
+                Drove the technical vision and engineering for large-scale product initiatives, focusing on scalable architecture and enhanced user experience
+              ],
+              [
+                Established a culture of technical excellence through the mentorship of junior and mid-level engineers, providing guidance on modern architectural principles.
               ]
             )
           ],
         )
 
         entry(
-          right: [*\@Auctane* – Austin, TX],
+          right: [*\@ShipStation* – Austin, TX],
           "Apr 2022 -  Oct 2024",
           "Software Engineer L2",
           [
@@ -172,7 +175,7 @@
         )
 
         entry(
-          right: [*\@Auctane* -- Austin, TX],
+          right: [*\@ShipStation* -- Austin, TX],
           "June 2021 - Apr 2022",
           "Software Engineer L1",
           [
@@ -190,23 +193,6 @@
             )
           ],
         )
-
-         entry(
-          right: [*\@Glowstik* -- Denver, CO],
-          "Oct 2022 - June 2023",
-          "SWE Contract",
-          [
-            #v(4pt)
-            #list(
-              [
-                Successfully migrated a vanilla Create React App (CRA) to Next.js and TypeScript, enhancing performance and scalability.
-              ],
-              [
-                Collaborated closely with developers and designers to ensure a seamless integration of Next.js and TypeScript into the existing codebase.
-              ],
-            )
-          ],
-        )
      },
    )
   },
@@ -219,18 +205,17 @@
       "2025",
       "Badger",
       [
-        #list([
-          Simplify splitting bills with friends. Using OpenAI's vision API, upload receipts, select items, and calculate who owes what. No more awkward "settle up later" moments. Built on a Node.js and PostgreSQL backend with an easy-to-use React Native mobile app.
-        ])
-      ],
-    )
-    entry(
-      "2024",
-      "Fielding-AI",
-      [
-        #list([
-          An interactive, AI-powered dynamicly generated web app to demonstrate RESTful architecture principles. Inspired by Roy Fielding's original HATEOAS (Hypermedia as the Engine of Application State) disertation.
-        ])
+        #list(
+          [
+            Simplify splitting bills with friends reducing the "settle-up" process from minutes to seconds.
+          ], 
+          [
+            Architected a cross-platform React Native application that leverages Gemini's computer vision to automate receipt parsing and bill splitting.
+          ],
+          [
+            Engineered a scalable backend using Node.js and PostgreSQL, implementing complex logic to handle asynchronous data processing from image uploads.
+          ]
+        )
       ],
     )
     entry(
@@ -239,7 +224,10 @@
       [
         #list(
           [
-            Developed a Google Chrome extension using React and TypeScript, enabling users to purchase shipping labels seamlessly from any website. Won the 2023 Auctane Engineering Hackathon.
+             Won the 2023 Auctane Engineering Hackathon by developing a Chrome extension (React/TypeScript) that enables seamless label purchasing from any site.
+          ],
+          [
+            Integrated directly with flagship shipping APIs, demonstrating the ability to rapidly prototype and ship high-value tools that solve real-world logistical friction.
           ]
         )
          
