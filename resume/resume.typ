@@ -224,10 +224,7 @@
       [
         #list(
           [
-             Won the 2023 Auctane Engineering Hackathon by developing a Chrome extension (React/TypeScript) that enables seamless label purchasing from any site.
-          ],
-          [
-            Integrated directly with flagship shipping APIs, demonstrating the ability to rapidly prototype and ship high-value tools that solve real-world logistical friction.
+             Won the 2023 Auctane Engineering Hackathon by developing a Chrome extension (React/TypeScript) that enables seamless label purchasing from any site. Integrated directly with ShipStations flagship shipping APIs.
           ]
         )
          
