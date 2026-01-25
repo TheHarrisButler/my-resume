@@ -38,7 +38,7 @@ jobs:
         name: Set up Typst
         uses: typst-community/setup-typst@v4
         with:
-          version: "v0.14.0"
+          typst-version: "v0.14.0"
       - id: compile
         name: Compile Typst
         run: |
