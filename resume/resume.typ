@@ -37,13 +37,13 @@
         entry(
           theme: aside-theme,
           "Languages",
-          "JavaScript, TypeScript, Python, Bash",
+          "JavaScript, TypeScript, Bash",
           []
         )
         entry(
           theme: aside-theme,
           "Web",
-          "React, Next.js, Vite, ReactQuery",
+          "React, Next.js, Vite, Tanstack Query",
           [],
         )
         entry(
@@ -55,7 +55,7 @@
         entry(
           theme: aside-theme,
           "API",
-          "REST",
+          "REST, SOAP",
           [],
         )
         entry(
@@ -142,7 +142,7 @@
                 Architected and led the 3-month comprehensive rewrite of the Stamps.com flagship web app, modernizing a legacy codebase for over 50,000 monthly active users.
               ],
               [
-                Leveraged AI-augmentation to accelerate development velocity, achieving a production-ready state for a decade-old system in 3 months.
+                Leveraged the latest AI tools to accelerate development velocity, achieving a production-ready state for a decade-old system in 3 months.
               ],
               [
                 Drove the technical vision and engineering for large-scale product initiatives, focusing on scalable architecture and enhanced user experience
@@ -203,17 +203,14 @@
   {
     entry(
       "2025",
-      "Badger",
+      "Badger ()",
       [
         #list(
           [
             Simplify splitting bills with friends reducing the "settle-up" process from minutes to seconds.
           ], 
           [
-            Architected a cross-platform React Native application that leverages Gemini's computer vision to automate receipt parsing and bill splitting.
-          ],
-          [
-            Engineered a scalable backend using Node.js and PostgreSQL, implementing complex logic to handle asynchronous data processing from image uploads.
+            Architected a cross-platform React Native application that leverages Gemini's computer vision to automate receipt parsing and bill splitting. Engineered a scalable backend using Node.js and PostgreSQL.
           ]
         )
       ],
