@@ -203,7 +203,7 @@
   {
     entry(
       "2025",
-      "Badger ()",
+      "Badger | AI-Driven Bill Splitting Mobile App",
       [
         #list(
           [
@@ -217,11 +217,11 @@
     )
     entry(
       "2023",
-      "Shipmunk",
+      "Shipmunk | Chrome Extension For Purchasing Shipping Labels",
       [
         #list(
           [
-             Won the 2023 Auctane Engineering Hackathon by developing a Chrome extension (React/TypeScript) that enables seamless label purchasing from any site. Integrated directly with ShipStations flagship shipping APIs.
+             Won the 2023 Auctane Engineering Hackathon by developing a Chrome extension (React/TypeScript) that enables seamless shipping label purchasing from any site. Integrated directly with ShipStations flagship shipping APIs.
           ]
         )
          
